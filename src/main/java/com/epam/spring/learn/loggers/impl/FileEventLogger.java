@@ -1,6 +1,7 @@
-package com.epam.spring.learn.loggers;
+package com.epam.spring.learn.loggers.impl;
 
 import com.epam.spring.learn.entities.Event;
+import com.epam.spring.learn.loggers.EventLogger;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -9,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Andrey_Chadov on 5/17/2017.
  */
-public class FileEventLogger implements ConsoleEventLogger{
+public class FileEventLogger implements EventLogger {
 
     private File file;
     private String fileName;

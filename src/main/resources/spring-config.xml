@@ -10,7 +10,7 @@
         <constructor-arg name = "fullName" value = "John Smith"/>
     </bean>
 
-    <bean id = "consoleEventLoggerImpl" class = "com.epam.spring.learn.loggers.ConsoleEventLoggerImpl"/>
+    <bean id = "consoleEventLoggerImpl" class = "com.epam.spring.learn.loggers.impl.ConsoleEventLoggerImpl"/>
 
     <bean id = "app" class = "com.epam.spring.learn.App">
         <constructor-arg ref="client"/>
@@ -28,7 +28,7 @@
         <property name="message" value="message for John Doe"/>
     </bean>
 
-        <bean id="fileEventLogger" class="com.epam.spring.learn.loggers.FileEventLogger" init-method="init">
+        <bean id="fileEventLogger" class="com.epam.spring.learn.loggers.impl.FileEventLogger" init-method="init">
             <property name="fileName" value="file.txt"/>
         </bean>
 

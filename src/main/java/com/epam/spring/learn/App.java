@@ -1,10 +1,10 @@
 package com.epam.spring.learn;
 
-import com.epam.spring.learn.loggers.ConsoleEventLogger;
-import com.epam.spring.learn.loggers.ConsoleEventLoggerImpl;
+import com.epam.spring.learn.loggers.EventLogger;
+import com.epam.spring.learn.loggers.impl.ConsoleEventLoggerImpl;
 import com.epam.spring.learn.entities.Client;
 import com.epam.spring.learn.entities.Event;
-import com.epam.spring.learn.loggers.FileEventLogger;
+import com.epam.spring.learn.loggers.impl.FileEventLogger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -23,7 +23,7 @@ public class App {
     FileEventLogger fileEventLogger;
 
 
-    public App(Client client, ConsoleEventLogger consoleEventLoggerImpl, Event event) {
+    public App(Client client, EventLogger consoleEventLoggerImpl, Event event) {
         this.client = client;
         this.fileEventLogger = (FileEventLogger) consoleEventLoggerImpl;
         this.event = event;
