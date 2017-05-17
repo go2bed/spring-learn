@@ -1,4 +1,4 @@
-package com.epam.spring.learn;
+package com.epam.spring.learn.entities;
 
 /**
  * Created by Andrey_Chadov on 5/17/2017.
