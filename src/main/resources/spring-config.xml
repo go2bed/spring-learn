@@ -19,7 +19,9 @@
     </bean>
 
     <bean id="event" class="com.epam.spring.learn.entities.Event" scope="prototype">
-       <constructor-arg name="date" type="java.util.Date" value="02-JUN-2017"/>
+       <constructor-arg>
+           <bean class="java.util.Date"/>
+       </constructor-arg>
        <constructor-arg>
            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
        </constructor-arg>
