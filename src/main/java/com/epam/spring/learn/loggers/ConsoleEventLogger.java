@@ -1,4 +1,4 @@
-package com.epam.spring.learn.actions;
+package com.epam.spring.learn.loggers;
 
 import com.epam.spring.learn.entities.Event;
 

@@ -1,8 +1,10 @@
 package com.epam.spring.learn;
 
-import com.epam.spring.learn.actions.ConsoleEventLoggerImpl;
+import com.epam.spring.learn.loggers.ConsoleEventLogger;
+import com.epam.spring.learn.loggers.ConsoleEventLoggerImpl;
 import com.epam.spring.learn.entities.Client;
 import com.epam.spring.learn.entities.Event;
+import com.epam.spring.learn.loggers.FileEventLogger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,10 +20,12 @@ public class App {
 
     ConsoleEventLoggerImpl consoleEventLoggerImpl;
 
+    FileEventLogger fileEventLogger;
 
-    public App(Client client, ConsoleEventLoggerImpl consoleEventLoggerImpl, Event event) {
+
+    public App(Client client, ConsoleEventLogger consoleEventLoggerImpl, Event event) {
         this.client = client;
-        this.consoleEventLoggerImpl = consoleEventLoggerImpl;
+        this.fileEventLogger = (FileEventLogger) consoleEventLoggerImpl;
         this.event = event;
     }
 
@@ -30,7 +34,7 @@ public class App {
 
     public void logEvent(String msg) {
         String message = msg.replaceAll(client.getId(), client.getFullName());
-        consoleEventLoggerImpl.logEvent(event);
+        fileEventLogger.logEvent(event);
     }
 
     public static void main(String[] args) {
