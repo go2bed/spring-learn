@@ -31,7 +31,7 @@ public class App {
 
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
 
-        App app = (App) ctx.getBean("app");
+        App app = ctx.getBean(App.class, "app");
 
 
         app.logEvent("Some event for user 1");
