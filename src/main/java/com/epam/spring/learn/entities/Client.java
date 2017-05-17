@@ -1,8 +1,5 @@
 package com.epam.spring.learn.entities;
 
-/**
- * Created by Andrey_Chadov on 5/17/2017.
- */
 public class Client {
 
     private String id;

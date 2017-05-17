@@ -7,9 +7,6 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by Andrey_Chadov on 5/17/2017.
- */
 public class FileEventLogger implements EventLogger {
 
     private File file;

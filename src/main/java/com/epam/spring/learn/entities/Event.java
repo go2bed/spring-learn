@@ -4,9 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by Andrey_Chadov on 5/17/2017.
- */
+
 public class Event {
 
     private int id = new Random().nextInt();

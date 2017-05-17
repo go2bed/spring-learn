@@ -8,9 +8,7 @@ import com.epam.spring.learn.loggers.impl.FileEventLogger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Created by Andrey_Chadov on 5/17/2017.
- */
+
 public class App {
 
 
