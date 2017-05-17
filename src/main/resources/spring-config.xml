@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id = "client" class = "com.epam.spring.learn.Client">
+        <constructor-arg name = "id" value = "1"/>
+        <constructor-arg name = "fullName" value = "John Smith"/>
+    </bean>
+
+    <bean id = "consoleEventLoggerImpl" class = "com.epam.spring.learn.ConsoleEventLoggerImpl"/>
+
+    <bean id = "app" class = "com.epam.spring.learn.App">
+        <constructor-arg ref="client"/>
+        <constructor-arg ref="consoleEventLoggerImpl"/>
+    </bean>
+</beans>

@@ -3,10 +3,8 @@ package com.epam.spring.learn;
 /**
  * Created by Andrey_Chadov on 5/17/2017.
  */
-public class ConsoleEventLogger {
+public interface ConsoleEventLogger {
 
-    public void logEvent(String msg) {
-        System.out.println(msg);
-    }
+    void logEvent(String msg);
 
 }
