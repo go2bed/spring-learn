@@ -33,7 +33,7 @@
     </bean>
 
 
-    <bean id="cacheFileEventLogger" class="com.epam.spring.learn.loggers.impl.CacheFileEventLogger" init-method="init" destroy-method="destroy">
+    <bean id="cacheFileEventLogger" class="com.epam.spring.learn.loggers.impl.CacheFileEventLogger" parent="fileEventLogger" destroy-method="destroy">
         <constructor-arg name="cacheSize" value="5"/>
         <constructor-arg name="fileName" value="file.txt"/>
     </bean>
