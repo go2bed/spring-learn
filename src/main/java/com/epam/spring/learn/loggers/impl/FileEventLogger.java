@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class FileEventLogger implements EventLogger {
 
-    private File file;
-    private String fileName;
+    protected File file;
+    protected String fileName;
 
     public FileEventLogger() {
     }
@@ -22,12 +22,17 @@ public class FileEventLogger implements EventLogger {
 
     @Override
     public void logEvent(Event event) {
+        writeEvetnsToFile(event);
+    }
+
+    private void writeEvetnsToFile(Event event) {
         try {
+            System.out.println(event + " This event");
             FileUtils.writeStringToFile(file,event.toString(),true);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Невозможно записать данные в файл " + e.getMessage());
         }
-
     }
 
     public void setFileName(String fileName) {
