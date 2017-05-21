@@ -1,5 +1,7 @@
 package com.epam.spring.learn.entities;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Client {
 
     private String id;
@@ -20,7 +22,7 @@ public class Client {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(@Value("greeting")String id) {
         this.id = id;
     }
 

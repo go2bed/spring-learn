@@ -3,11 +3,14 @@ package com.epam.spring.learn.loggers.impl;
 
 import com.epam.spring.learn.entities.Event;
 import org.apache.commons.io.FileUtils;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service("cacheFileEventLogger")
 public class CacheFileEventLogger extends FileEventLogger {
 
     private int cacheSize;
@@ -42,6 +45,7 @@ public class CacheFileEventLogger extends FileEventLogger {
         }
     }
 
+    @PreDestroy
     public void destroy() {
         if (!cache.isEmpty() || cache != null) {
             writeEventsFromCache(cache);

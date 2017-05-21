@@ -3,20 +3,33 @@ package com.epam.spring.learn.loggers.impl;
 import com.epam.spring.learn.entities.Event;
 import com.epam.spring.learn.loggers.EventLogger;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 
+@Service("fileEventLogger")
 public class FileEventLogger implements EventLogger {
 
     protected File file;
+
+    @Value("${events.file:target/events_log.txt}")
     protected String fileName;
 
     public FileEventLogger() {
     }
 
+    @PostConstruct
     public void init() throws IOException {
-        this.file = new File(fileName);
+        file = new File(fileName);
+        if (file.exists() && !file.canWrite()) {
+            throw new IllegalArgumentException(
+                    "Can't write to file " + fileName);
+        } else if (!file.exists()) {
+            file.createNewFile();
+        }
     }
 
 
