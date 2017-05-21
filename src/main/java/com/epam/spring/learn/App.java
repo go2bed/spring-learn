@@ -6,6 +6,7 @@ import com.epam.spring.learn.entities.Client;
 import com.epam.spring.learn.entities.Event;
 import com.epam.spring.learn.entities.EventType;
 import com.epam.spring.learn.loggers.EventLogger;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
@@ -58,8 +59,8 @@ public class App {
         ctx.close();
     }
 
-
-     private void logEvent(EventType eventType, Event event, String msg) {
+    @Pointcut
+    private void logEvent(EventType eventType, Event event, String msg) {
         String message = msg.replaceAll(client.getId(), client.getFullName());
         event.setMessage(message);
 

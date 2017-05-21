@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Pointcut("execution(* *.logEvent(..))")
-    public void allLogEventMethods(){}
-
     @Before("allLogEventMethods()")
     public void logBefore(){
         System.out.println(" it is a life and logging "
-       );
+        );
     }
+
+    @Pointcut("execution(* *.logEvent(..))")
+    public void allLogEventMethods(){}
 }
