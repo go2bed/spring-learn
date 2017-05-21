@@ -40,4 +40,12 @@ public class Client {
         this.greeting = greeting;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", greeting='" + greeting + '\'' +
+                '}';
+    }
 }

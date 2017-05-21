@@ -36,6 +36,7 @@ public class App {
 
     public void logEvent(EventType eventType, String msg) {
         String message = msg.replaceAll(client.getId(), client.getFullName());
+        System.out.println(client.toString());
         eventLogger = loggers.get(eventType);
         if (eventLogger == null) {
             eventLogger = defaultEventLogger;

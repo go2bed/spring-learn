@@ -8,9 +8,9 @@
     <import resource="loggers.xml"/>
 
     <bean id="client" class="com.epam.spring.learn.entities.Client">
-        <constructor-arg name="id" value="1"/>
-        <constructor-arg name="fullName" value="John Smith"/>
-        <property name="greeting" value="Hello there!"/>
+        <constructor-arg name="id" value="${id}"/>
+        <constructor-arg name="fullName" value="${name}"/>
+        <property name="greeting" value="${greeting}"/>
     </bean>
 
 
@@ -34,6 +34,16 @@
             <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
         </constructor-arg>
         <property name="message" value="message for John Doe"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
     </bean>
 
 </beans>
