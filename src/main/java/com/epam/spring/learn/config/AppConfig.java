@@ -4,12 +4,14 @@ import com.epam.spring.learn.entities.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 import java.text.DateFormat;
 import java.util.Date;
 
+@EnableAspectJAutoProxy
 @Configuration
 @PropertySource("classpath:client.properties")
 public class AppConfig {

@@ -58,7 +58,8 @@ public class App {
         ctx.close();
     }
 
-    private void logEvent(EventType eventType, Event event, String msg) {
+
+     private void logEvent(EventType eventType, Event event, String msg) {
         String message = msg.replaceAll(client.getId(), client.getFullName());
         event.setMessage(message);
 
