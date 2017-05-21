@@ -2,7 +2,7 @@ package com.epam.spring.learn;
 
 import com.epam.spring.learn.loggers.EventLogger;
 import com.epam.spring.learn.loggers.impl.CacheFileEventLogger;
-import com.epam.spring.learn.loggers.impl.ConsoleEventLoggerImpl;
+import com.epam.spring.learn.loggers.impl.ConsoleEventLogger;
 import com.epam.spring.learn.entities.Client;
 import com.epam.spring.learn.entities.Event;
 import com.epam.spring.learn.loggers.impl.FileEventLogger;
@@ -17,7 +17,7 @@ public class App {
 
     Event event;
 
-    ConsoleEventLoggerImpl consoleEventLoggerImpl;
+    ConsoleEventLogger consoleEventLoggerImpl;
 
     FileEventLogger fileEventLogger;
 
