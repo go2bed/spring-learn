@@ -13,7 +13,7 @@
     <bean id="client" class="com.epam.spring.learn.entities.Client">
         <constructor-arg name="id" value="${id}"/>
         <constructor-arg name="fullName" value="${name}"/>
-        <property name="greeting" value="${greeting}"/>
+        <property name="greeting" value="#{systemEnvironment['USERNAME']}"/>
     </bean>
 
 
