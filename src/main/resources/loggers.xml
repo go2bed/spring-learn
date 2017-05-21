@@ -22,7 +22,6 @@
             <list>
                 <ref bean="consoleEventLogger"/>
                 <ref bean="fileEventLogger"/>
-                <ref bean="cacheFileEventLogger"/>
             </list>
         </constructor-arg>
     </bean>
