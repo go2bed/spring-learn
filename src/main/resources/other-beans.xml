@@ -10,6 +10,7 @@
     <bean id="client" class="com.epam.spring.learn.entities.Client">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="fullName" value="John Smith"/>
+        <property name="greeting" value="Hello there!"/>
     </bean>
 
 
